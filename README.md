@@ -26,6 +26,7 @@ A Godot game where you destroy incoming asteroids with mouse clicks, aiming to s
 - Avoid letting asteroids reach the left side of the screen, as this will cause them to crash into you and you will lose HP
 
 ## Screenshots
+<img src="https://github.com/user-attachments/assets/3980132d-3bb5-4edf-a595-aa81e84b477b" alt="AsteroidRush1" width="512"/>
 ![AsteroidRush1](https://github.com/user-attachments/assets/3980132d-3bb5-4edf-a595-aa81e84b477b)
 ![AsteroidRush2](https://github.com/user-attachments/assets/d8f2aa14-061c-457b-89ea-470b3672b731)
 ![AsteroidRush3](https://github.com/user-attachments/assets/b0e88074-00ab-40d7-bfa7-47fd12547f0e)
@@ -37,3 +38,7 @@ A Godot game where you destroy incoming asteroids with mouse clicks, aiming to s
 - Used assets from:
   - [opengamert](https://opengameart.org/)
   - [Kenney](https://kenney.nl/assets)
+- Used software:
+  - Godot v4.2.2
+  - Audacity 3.6.1
+  - Adobe Photoshop CC 2019

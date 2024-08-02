@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctf51nnoxr8pm"]
+
+[ext_resource type="Texture2D" uid="uid://tppskdb33vk2" path="res://Assets/HUD_Items/Transparent PNG/Health/frame-1.png" id="1_0yhr5"]
+[ext_resource type="Texture2D" uid="uid://c4t26edfc2b6x" path="res://Assets/HUD_Items/Transparent PNG/Health/frame-2.png" id="2_20xgy"]
+[ext_resource type="Texture2D" uid="uid://e4e1amcb83nd" path="res://Assets/HUD_Items/Transparent PNG/Health/frame-3.png" id="3_18rvy"]
+[ext_resource type="Texture2D" uid="uid://dvprgvr5r5pou" path="res://Assets/HUD_Items/Transparent PNG/Health/frame-4.png" id="4_lvkek"]
+[ext_resource type="Texture2D" uid="uid://kmpt1ic34lc7" path="res://Assets/HUD_Items/Transparent PNG/Health/frame-5.png" id="5_2pnb6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtlj6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0yhr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_20xgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_18rvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lvkek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2pnb6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Heart" type="Node2D"]
+scale = Vector2(0.05, 0.05)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rtlj6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.923404

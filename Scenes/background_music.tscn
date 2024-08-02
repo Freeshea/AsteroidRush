@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvyndxa2h7e5p"]
+
+[ext_resource type="AudioStream" uid="uid://dyectfq1pwup4" path="res://Assets/space_background_music/MyVeryOwnDeadShip.wav" id="1_csln2"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_csln2")
+volume_db = -4.0
+autoplay = true
+bus = &"Music"

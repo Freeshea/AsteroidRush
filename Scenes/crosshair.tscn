@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfm412pwa7104"]
+
+[ext_resource type="Texture2D" uid="uid://dkix2cb4yomev" path="res://Assets/Crosshair/CrosshairWhite.png" id="1_txu3u"]
+[ext_resource type="Script" path="res://Scripts/crosshair.gd" id="1_w66pi"]
+[ext_resource type="AudioStream" uid="uid://dkgx5tn4lmg36" path="res://Assets/Space_sounds/laser3.wav" id="3_7ddbc"]
+[ext_resource type="Texture2D" uid="uid://wl432rhu3v15" path="res://Assets/Crosshair/CrosshairRed.png" id="5_n83tb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8p7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_txu3u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_n83tb")
+}],
+"loop": true,
+"name": &"cross",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41xpx"]
+radius = 46.0
+
+[node name="Crosshair" type="Area2D"]
+process_mode = 3
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_w66pi")
+
+[node name="CrossSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_j8p7m")
+animation = &"cross"
+
+[node name="Crosshair_Collision" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_41xpx")
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ddbc")
+volume_db = -8.0
+bus = &"SFX"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxajdmgcti22g"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_2xufg"]
+[ext_resource type="Texture2D" uid="uid://b2wx7i86qgg7o" path="res://Assets/Space_backgrounds/Large 1024x1024/Blue Nebula/Blue Nebula 2 - 1024x1024.png" id="1_3rj6b"]
+[ext_resource type="FontFile" uid="uid://bpimoexloxotl" path="res://Assets/Fonts/PixelOperator8.ttf" id="2_okunf"]
+[ext_resource type="PackedScene" uid="uid://ydojpt8dia55" path="res://Scenes/volume_slider.tscn" id="4_thjfk"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xufg")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture = ExtResource("1_3rj6b")
+
+[node name="OptionsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -140.0
+offset_right = 140.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="MainVolumeBox" type="HBoxContainer" parent="OptionsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="OptionsContainer/MainVolumeBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_okunf")
+text = "Main volume:"
+
+[node name="master" parent="OptionsContainer/MainVolumeBox" instance=ExtResource("4_thjfk")]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+bus_name = "Master"
+
+[node name="BackgroundBox" type="HBoxContainer" parent="OptionsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="OptionsContainer/BackgroundBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_okunf")
+text = "Music: "
+
+[node name="Music" parent="OptionsContainer/BackgroundBox" instance=ExtResource("4_thjfk")]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXVolumeBox" type="HBoxContainer" parent="OptionsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="OptionsContainer/SFXVolumeBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_okunf")
+text = "SFX volume: "
+
+[node name="SFX" parent="OptionsContainer/SFXVolumeBox" instance=ExtResource("4_thjfk")]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="BackButton" type="Button" parent="OptionsContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_okunf")
+text = "Back"
+
+[connection signal="pressed" from="OptionsContainer/BackButton" to="." method="_on_back_button_pressed"]

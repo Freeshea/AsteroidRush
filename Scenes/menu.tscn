@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4kspwuixxoax"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_1ogts"]
+[ext_resource type="Texture2D" uid="uid://b2wx7i86qgg7o" path="res://Assets/Space_backgrounds/Large 1024x1024/Blue Nebula/Blue Nebula 2 - 1024x1024.png" id="2_iqew0"]
+[ext_resource type="FontFile" uid="uid://bpimoexloxotl" path="res://Assets/Fonts/PixelOperator8.ttf" id="3_hxcb6"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ogts")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture = ExtResource("2_iqew0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -60.0
+offset_right = 71.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_hxcb6")
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hxcb6")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+theme_override_fonts/font = ExtResource("3_hxcb6")
+text = "Quit "
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

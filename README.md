@@ -10,6 +10,7 @@ A Godot game where you destroy incoming asteroids with mouse clicks, aiming to s
 
 ## Features
 - Fast-paced asteroid 2D shooter
+- Background music and sound effects
 - Increasing difficulty with time
 - Score tracking and health system
 

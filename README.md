@@ -27,7 +27,7 @@ A Godot game where you destroy incoming asteroids with mouse clicks, aiming to s
 
 ## Screenshots
 
-<div style="text-align: center;">
+<div align="center>
   <img src="https://github.com/user-attachments/assets/3980132d-3bb5-4edf-a595-aa81e84b477b" alt="AsteroidRush1" width="512"/>
   <img src="https://github.com/user-attachments/assets/d8f2aa14-061c-457b-89ea-470b3672b731" alt="AsteroidRush2" width="512"/>
   <img src="https://github.com/user-attachments/assets/b0e88074-00ab-40d7-bfa7-47fd12547f0e" alt="AsteroidRush3" width="512"/>
